@@ -17,9 +17,9 @@ extern __errno_location
 %macro CHECK_ERROR_LABEL 0
 _error:
 	neg rax
-	mov rbx, rax	; save errno
-	call __errno_location WRT ..plt	; retrieve address to errno
-	mov [rax], rbx	; put errno in return value of __error (pointer to errno)
-	mov rax, -1
+	mov rbx, rax	; save errno returned by a syscall
+	call __errno_location WRT ..plt	; retrieve errno's address (prototype: int *__errno_location(void))
+	mov [rax], rbx	; put errno int into the address
+	mov rax, -1 	; return -1
 	ret
 %endmacro

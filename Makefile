@@ -6,7 +6,7 @@
 #    By: martiper <martiper@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/30 09:59:57 by martiper          #+#    #+#              #
-#    Updated: 2024/03/30 11:10:50 by martiper         ###   ########.fr        #
+#    Updated: 2024/03/30 14:14:38 by martiper         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ PROJECT_NAME = Libft
 
 SRCS_DIR = src
 
-SRCS = ft_write.s
+SRCS = ft_write.s ft_read.s ft_strlen.s ft_strcpy.s ft_strcmp.s ft_strdup.s
 
 OBJ_DIR = objs
 
@@ -32,7 +32,7 @@ ARCH_DIR = bin
 NAME =	$(addprefix $(ARCH_DIR)/, libasm.a)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes #-S -mllvm --x86-asm-syntax=intel
+CFLAGS = -Wall -Wextra -Werror -Iincludes -g #-S -mllvm --x86-asm-syntax=intel
 LFLAGS = -L$(ARCH_DIR) -lasm
 ### COLORS ###
 
